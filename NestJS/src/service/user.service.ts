@@ -9,7 +9,7 @@ import * as bcrypt from "bcrypt"
 export class UserService {
     constructor(@InjectRepository(User) private userRepository: Repository<User>) {}
 
-    async findByField(options: FindOneOptions<UserDTO>): Promise<UserDTO | undefined> {
+    async findByField(options: FindOneOptions<UserDTO>): Promise<User | undefined> {
         return await this.userRepository.findOne(options);
     }
 
